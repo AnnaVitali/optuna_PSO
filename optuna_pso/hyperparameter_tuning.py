@@ -21,7 +21,7 @@ def objective(trial):
     c2s = trial.suggest_float('c2s', 0.1, 3.0)
 
     cmd = [
-        'java', '-jar', str(JAR_PATH),
+        'java', '-jar', JAR_PATH,
         str(swarmSize), str(maxIters), str(inertias), str(c1s), str(c2s)
     ]
 
