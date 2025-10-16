@@ -11,7 +11,7 @@ from pathlib import Path
 logging.basicConfig(level=logging.INFO, format="%(levelname)s: %(message)s")
 print("cwd:", os.getcwd())
 # Resolve JAR path relative to this script
-JAR_PATH = "../../PSO_thermoforming/thermoforming_optimization/target/thermoforming_optimization-1.0.jar"
+JAR_PATH = Path("..", "..", "PSO_thermoforming", "thermoforming_optimization", "target", "thermoforming_optimization-1.0.jar")
 
 def objective(trial):
     swarmSize = trial.suggest_int('swarmSize', 10, 100)
