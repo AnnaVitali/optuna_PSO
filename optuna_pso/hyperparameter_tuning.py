@@ -11,7 +11,7 @@ from pathlib import Path
 logging.basicConfig(level=logging.INFO, format="%(levelname)s: %(message)s")
 print("cwd:", os.getcwd())
 # Resolve JAR path relative to this script
-JAR_PATH = Path("..", "..", "PSO_thermoforming", "thermoforming_optimization", "target", "thermoforming_optimization-1.0.jar")
+JAR_PATH = "../../PSO_thermoforming/thermoforming_optimization/target/thermoforming_optimization-1.0.jar"
 
 def objective(trial):
     swarmSize = trial.suggest_int('swarmSize', 10, 100)
@@ -58,11 +58,6 @@ def objective(trial):
     return fitness
 
 if __name__ == '__main__':
-    # Verify JAR exists before starting tuning
-    if not JAR_PATH.is_file():
-        logging.error("JAR not found at `%s`. Please build the project or correct the path.", JAR_PATH)
-        sys.exit(1)
-
     study = optuna.create_study(direction='minimize')
     study.optimize(objective, n_trials=100)
 
