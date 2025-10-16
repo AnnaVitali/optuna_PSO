@@ -26,7 +26,7 @@ def objective(trial):
     ]
 
     try:
-        result = subprocess.run(cmd, capture_output=True, text=True, timeout=300)
+        result = subprocess.run(cmd, capture_output=True, text=True)
     except subprocess.TimeoutExpired:
         logging.warning("Subprocess timed out for params: %s", trial.params)
         return float('inf')
