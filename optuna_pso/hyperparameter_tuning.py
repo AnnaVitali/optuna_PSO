@@ -17,7 +17,7 @@ def objective(trial):
 
     # Build the command to run the .jar
     cmd = [
-        'java', '-jar', '../../PSO_thermoforming/thermoforming_optimization/target/thermoforming_optimization-1.0.jar',
+        'java', '-jar', './PSO_thermoforming/thermoforming_optimization/target/thermoforming_optimization-1.0.jar',
         #str(swarmSize), str(maxIters), str(minInertia), str(maxInertia), str(c1s), str(c2s)
         str(swarmSize), str(maxIters), str(inertias), str(c1s), str(c2s)
     ]
